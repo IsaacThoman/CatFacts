@@ -1,15 +1,16 @@
 $messagelimit = 254 
 Add-Type -AssemblyName System.speech
 $speak = New-Object System.Speech.Synthesis.SpeechSynthesizer
-$speak.Rate   = -2  # -10 to 10; -10 is slowest, 10 is fastest
-sleep 15
+$speak.Rate   = 0 
+sleep 2
 $textline = 0
 function fact {
 $textline = $textline + 1
-$message = (gc C:/cats.txt | select-object -Index $textline) | Out-String
+$message = (gc C:/catfacts/facts.txt | select-object -Index $textline) | Out-String
 write-output $message
 $speak.Speak($message)
-sleep 
+$nextfactin = Get-Random -Minimum 10 -Maximum 3000
+sleep $nextfactin
 if($textline -lt $messagelimit) {
 fact
 }
