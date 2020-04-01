@@ -5,7 +5,7 @@ $speak.Rate   = 0
 sleep 2
 $textline = 0
 function fact {
-$textline = $textline + 1
+$textline = Get-Random -Minimum 1 -Maximum 250
 $message = (gc C:/catfacts/facts.txt | select-object -Index $textline) | Out-String
 write-output $message
 $speak.Speak($message)
