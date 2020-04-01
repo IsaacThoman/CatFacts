@@ -1,3 +1,4 @@
 # CatFactsWin
 A powershell script that randomly reads out cat facts.
-Code was written by me, cat facts from https://github.com/0x27
+The code was written by me.
+The cat facts are from https://github.com/0x27
