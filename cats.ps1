@@ -9,7 +9,7 @@ $textline = $textline + 1
 $message = (gc C:/cats.txt | select-object -Index $textline) | Out-String
 write-output $message
 $speak.Speak($message)
-sleep 1000
+sleep 
 if($textline -lt $messagelimit) {
 fact
 }
